@@ -12,7 +12,7 @@ Tailwind is a utility-first CSS framework which is much lower-level than Bootstr
 3. add script to convert styles.css to tailwind css file that include all utility classes
 ```
 "scripts": {
-"build-css": "tailwindcss build src/styles.css -o public/styles.css"
+  "build-css": "npx tailwindcss -i ./src/styles.css -o ./public/tailwind.css"
 },
 ```
 
@@ -63,3 +63,15 @@ module.exports = {
 };
 ```
 When you make a change in both src/styles.css and tailwind.config.js, you have to re-compile again with `npm run build-css`
+
+## @apply Directive
+Instead of writing the same tailwind css in every the same type of component like card, you can use @apply to make it reusable.
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card {
+  @apply px-16 py-4 mx-4 bg-white shadow rounded;
+}
+```
