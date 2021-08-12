@@ -3,3 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.card {
+  @apply px-16 py-4 mx-4 bg-white shadow rounded;
+}
